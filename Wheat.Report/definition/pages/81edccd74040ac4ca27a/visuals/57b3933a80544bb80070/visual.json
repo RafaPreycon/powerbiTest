@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "57b3933a80544bb80070",
+  "position": {
+    "x": 9.72644376899696,
+    "y": 352.09726443769,
+    "z": 1,
+    "height": 280.1215805471125,
+    "width": 229.54407294832828
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "final_wheat_data"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "final_wheat_data.category",
+              "nativeQueryRef": "category"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "final_wheat_data"
+                  }
+                },
+                "Property": "category"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4a98b3e8b60188a05e45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "final_wheat_data"
+              }
+            },
+            "Property": "category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
