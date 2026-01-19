@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Wheat"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "77d254f3-c363-495b-84b0-c38fff642614"
+  }
+}

@@ -1,0 +1,18 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["final_wheat_data"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table final_wheat_data
+
+ref cultureInfo en-GB
+

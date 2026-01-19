@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Wheat"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b5858cae-367e-4150-8103-b7198d5b92e1"
+  }
+}

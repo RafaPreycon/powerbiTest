@@ -1,0 +1,114 @@
+table final_wheat_data
+	lineageTag: a1533188-1b00-4b08-96c5-800b8c023c93
+
+	column commodity
+		dataType: string
+		lineageTag: c8d069f9-47a5-48de-a8d8-b7655cad3ffe
+		summarizeBy: none
+		sourceColumn: commodity
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: bd104ecb-5d38-489f-bd4d-87e8572aeaa1
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column item
+		dataType: string
+		lineageTag: 240b6652-ea8b-4ead-a147-9fc056a98843
+		summarizeBy: none
+		sourceColumn: item
+
+		annotation SummarizationSetBy = Automatic
+
+	column item2
+		dataType: string
+		lineageTag: ea8dcc78-cda2-4e01-95fe-2fe051746ddf
+		summarizeBy: none
+		sourceColumn: item2
+
+		annotation SummarizationSetBy = Automatic
+
+	column units
+		dataType: string
+		lineageTag: 5fa8fbe2-5272-49d6-9916-9f62d3e98134
+		summarizeBy: none
+		sourceColumn: units
+
+		annotation SummarizationSetBy = Automatic
+
+	column size
+		dataType: string
+		lineageTag: 40b9999b-d29f-48a3-bb90-1b2f161dfaa0
+		summarizeBy: none
+		sourceColumn: size
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 11f20c16-079f-4153-bfcf-f013faacb32b
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: e600d5f5-c4c9-489d-83f3-5321e0a05c25
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f59cdcd-2e2a-4dee-b25b-e7f9ff9d2116
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		lineageTag: 177b4cad-a112-495b-89bc-8e678c7e9ae4
+		summarizeBy: sum
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column survey_base_year
+		dataType: string
+		lineageTag: b7846771-f4b4-4f54-b662-7982887a19cb
+		summarizeBy: none
+		sourceColumn: survey_base_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column note
+		dataType: string
+		lineageTag: ac45b9fd-533e-41be-9d09-ddef2b183616
+		summarizeBy: none
+		sourceColumn: note
+
+		annotation SummarizationSetBy = Automatic
+
+	partition final_wheat_data = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("M:\powerbiGit\powerbiTest\final_wheat_data.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"commodity", type text}, {"category", type text}, {"item", type text}, {"item2", type text}, {"units", type text}, {"size", type text}, {"region", type text}, {"country", type text}, {"year", Int64.Type}, {"value", type number}, {"survey_base_year", type text}, {"note", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
