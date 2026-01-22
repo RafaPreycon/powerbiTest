@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "82101b50482288817dd4",
+  "position": {
+    "x": 547.59878419452889,
+    "y": 352.09726443769,
+    "z": 3,
+    "height": 280.12158054711244,
+    "width": 710.030395136778
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "final_wheat_data"
+                    }
+                  },
+                  "Property": "item2"
+                }
+              },
+              "queryRef": "final_wheat_data.item2",
+              "nativeQueryRef": "item2"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "46c0e3d84515d59006d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "final_wheat_data"
+              }
+            },
+            "Property": "item2"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
